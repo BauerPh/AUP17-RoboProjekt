@@ -2855,7 +2855,7 @@ Partial Class RoboTest
         Me.MaximizeBox = False
         Me.Name = "RoboTest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RoboTest v1.0"
+        Me.Text = "RoboTest v1.0.0.1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox17.ResumeLayout(False)
