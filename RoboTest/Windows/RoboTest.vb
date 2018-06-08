@@ -222,6 +222,12 @@ Public Class RoboTest
     ' Formsteuerung
     '##########################
     Private Sub RoboTest_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Prüfen ob Konfigdatei geladen wurde
+        If Not roboControl.pref.configFileLoaded Then
+            Application.Exit()
+            Return
+        End If
+
         KeyPreview = True
         'Event Handler
         AddHandler roboControl.com.ComPortChange, AddressOf eComPortChanged
@@ -251,7 +257,7 @@ Public Class RoboTest
     Private Sub RoboTest_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If settingsChanged Or progChanged Then
             If MessageBox.Show($"{If(settingsChanged, "Einstellungen", "")}{If(settingsChanged And progChanged, " und ", "")}{If(progChanged, "Programm/Teachpunkte", "")} wurden geändert und nicht gespeichert. Wollen sie trotzdem schließen?", "Ungespeicherte Änderungen", MessageBoxButtons.YesNo, MessageBoxIcon.Question) _
-             = Windows.Forms.DialogResult.No Then
+             = DialogResult.No Then
                 e.Cancel = True
             End If
         End If

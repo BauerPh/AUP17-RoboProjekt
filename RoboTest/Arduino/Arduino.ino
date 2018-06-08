@@ -4,7 +4,7 @@
 #include <kissStepper.h>
 #include <Servo.h>
 #include <Bounce2.h>
-#define UNO_TEST
+//#define UNO_TEST
 
 // ****************************************************************************************************
 // Einstellungen

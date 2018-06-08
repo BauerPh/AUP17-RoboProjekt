@@ -59,15 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property _1194989231691813435led_circle_red_svg_thumb() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("1194989231691813435led_circle_red.svg.thumb", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
     End Module
 End Namespace

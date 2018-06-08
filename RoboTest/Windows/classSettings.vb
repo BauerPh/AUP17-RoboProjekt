@@ -38,6 +38,7 @@ Public Class classSettings
         Public maxAngle As Double
     End Structure
 
+    Public Property configFileLoaded As Boolean = False
     Public Property jointSettings As structJoint()
     Public Property servoSettings As structServo()
 
@@ -49,10 +50,23 @@ Public Class classSettings
         If System.IO.File.Exists(My.Settings.lastConfigFile) Then
             XMLReader(My.Settings.lastConfigFile)
             _actFilename = My.Settings.lastConfigFile
+            configFileLoaded = True
         Else
-            loadDefaulSettings()
+            If Not loadDefaulSettings() Then
+                If MessageBox.Show($"Die Konfigurationsdatei ""{cDefaultConfigFile}"" konnte nicht gefunden werden oder ist fehlerhaft. Soll sie gesucht werden?", "Konfigurationsdatei nicht gefunden!",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.Yes Then
+                    If loadSettings() Then
+                        configFileLoaded = True
+                    End If
+                End If
+            Else
+                configFileLoaded = True
+            End If
         End If
     End Sub
+    Public Function getDefaulConfigFilename() As String
+        Return cDefaultConfigFile
+    End Function
     Public Function loadDefaulSettings() As Boolean
         If System.IO.File.Exists(cDefaultConfigFile) Then
             XMLReader(cDefaultConfigFile)
