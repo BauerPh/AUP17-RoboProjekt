@@ -1,11 +1,5 @@
 ﻿'TODO
-'Ref Status auswerten
-'Schieberegler für Servo
-'Servo Prozentwert anpassen: Berechnung
-'Wartezeit für Sequenz (WAI-Telegramm)
-'Seq. Servo und Wartezeit dazu
-
-'Jede Achse und jeder Servo als Objekt mit allen Einstellungen und Funktionen
+'Status der Referenzfahrt auswerten
 
 Option Strict On
 
