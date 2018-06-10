@@ -241,7 +241,6 @@ Partial Class RoboTest
         Me.numTeachPointNum = New System.Windows.Forms.NumericUpDown()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.tbTeachPointName = New System.Windows.Forms.TextBox()
-        Me.btnTpCopy = New System.Windows.Forms.Button()
         Me.btnTpMoveTo = New System.Windows.Forms.Button()
         Me.btnTpAdd = New System.Windows.Forms.Button()
         Me.btnTpDel = New System.Windows.Forms.Button()
@@ -2617,7 +2616,6 @@ Partial Class RoboTest
         Me.GroupBox30.Controls.Add(Me.numTeachPointNum)
         Me.GroupBox30.Controls.Add(Me.Label57)
         Me.GroupBox30.Controls.Add(Me.tbTeachPointName)
-        Me.GroupBox30.Controls.Add(Me.btnTpCopy)
         Me.GroupBox30.Controls.Add(Me.btnTpMoveTo)
         Me.GroupBox30.Controls.Add(Me.btnTpAdd)
         Me.GroupBox30.Controls.Add(Me.btnTpDel)
@@ -2661,16 +2659,6 @@ Partial Class RoboTest
         Me.tbTeachPointName.Size = New System.Drawing.Size(106, 20)
         Me.tbTeachPointName.TabIndex = 118
         '
-        'btnTpCopy
-        '
-        Me.btnTpCopy.Enabled = False
-        Me.btnTpCopy.Location = New System.Drawing.Point(288, 182)
-        Me.btnTpCopy.Name = "btnTpCopy"
-        Me.btnTpCopy.Size = New System.Drawing.Size(75, 23)
-        Me.btnTpCopy.TabIndex = 117
-        Me.btnTpCopy.Text = "Kopieren"
-        Me.btnTpCopy.UseVisualStyleBackColor = True
-        '
         'btnTpMoveTo
         '
         Me.btnTpMoveTo.Enabled = False
@@ -2684,7 +2672,7 @@ Partial Class RoboTest
         'btnTpAdd
         '
         Me.btnTpAdd.Enabled = False
-        Me.btnTpAdd.Location = New System.Drawing.Point(288, 124)
+        Me.btnTpAdd.Location = New System.Drawing.Point(288, 153)
         Me.btnTpAdd.Name = "btnTpAdd"
         Me.btnTpAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnTpAdd.TabIndex = 102
@@ -2694,7 +2682,7 @@ Partial Class RoboTest
         'btnTpDel
         '
         Me.btnTpDel.Enabled = False
-        Me.btnTpDel.Location = New System.Drawing.Point(288, 153)
+        Me.btnTpDel.Location = New System.Drawing.Point(288, 182)
         Me.btnTpDel.Name = "btnTpDel"
         Me.btnTpDel.Size = New System.Drawing.Size(75, 23)
         Me.btnTpDel.TabIndex = 103
@@ -3195,7 +3183,6 @@ Partial Class RoboTest
     Friend WithEvents btnTpMoveTo As Button
     Friend WithEvents btnTpAdd As Button
     Friend WithEvents btnTpDel As Button
-    Friend WithEvents btnTpCopy As Button
     Friend WithEvents Label57 As Label
     Friend WithEvents tbTeachPointName As TextBox
     Friend WithEvents Label58 As Label

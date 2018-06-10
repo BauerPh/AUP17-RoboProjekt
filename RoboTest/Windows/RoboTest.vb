@@ -462,7 +462,7 @@ Public Class RoboTest
         roboControl.deleteTeachPoint(lbTeachPoints.SelectedIndex)
         progChanged = True
     End Sub
-    Private Sub btnTpCopy_Click(sender As Object, e As EventArgs) Handles btnTpCopy.Click
+    Private Sub btnTpCopy_Click(sender As Object, e As EventArgs)
 
     End Sub
     Private Sub btnTpMoveTo_Click(sender As Object, e As EventArgs) Handles btnTpMoveTo.Click
@@ -729,7 +729,6 @@ Public Class RoboTest
         btnProgCopy.Enabled = enabled
         btnProgExecuteLine.Enabled = enabled
         btnTpAdd.Enabled = enabled
-        btnTpCopy.Enabled = enabled
         btnTpDel.Enabled = enabled
         btnTpMoveTo.Enabled = enabled
         btnGo.Enabled = enabled
