@@ -643,6 +643,10 @@ Public Class RoboTest
         rtbLog.SelectionStart = rtbLog.Text.Length
         rtbLog.ScrollToCaret()
     End Sub
+    Private Sub rtbComLog_TextChanged(sender As Object, e As EventArgs) Handles rtbComLog.TextChanged
+        rtbComLog.SelectionStart = rtbComLog.Text.Length
+        rtbComLog.ScrollToCaret()
+    End Sub
     '-----------------------------------
     ' Target Scrollbars
     '-----------------------------------
