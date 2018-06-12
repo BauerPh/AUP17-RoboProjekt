@@ -69,6 +69,68 @@ Public Class classRobotControl
         End If
         Return False
     End Function
+    Public Sub moveTPUpDown(down As Boolean, index As Int32)
+        Dim tmpNewIndex As Int32
+        If teachPoints.Count > index And index >= 0 Then
+            If down Then
+                If index < teachPoints.Count - 1 Then 'Es gibt noch mind. einen weiteren Eintrag => also tauschen
+                    If teachPoints(index + 1).nr = teachPoints(index).nr + 1 Then
+                        teachPoints(index).nr += 1
+                        teachPoints(index + 1).nr -= 1
+                        swapTPNr(teachPoints(index).nr, teachPoints(index + 1).nr)
+                        tmpNewIndex = index + 1
+                    Else
+                        teachPoints(index).nr += 1
+                        changeTPNr(teachPoints(index).nr - 1, teachPoints(index).nr)
+                        tmpNewIndex = index
+                    End If
+                Else
+                    teachPoints(index).nr += 1
+                    changeTPNr(teachPoints(index).nr - 1, teachPoints(index).nr)
+                    tmpNewIndex = index
+                End If
+            Else
+                If teachPoints(index).nr > 0 Then
+                    If index > 0 Then
+                        If teachPoints(index - 1).nr = teachPoints(index).nr - 1 Then
+                            teachPoints(index).nr -= 1
+                            teachPoints(index - 1).nr += 1
+                            swapTPNr(teachPoints(index).nr, teachPoints(index - 1).nr)
+                            tmpNewIndex = index - 1
+                        Else
+                            teachPoints(index).nr -= 1
+                            changeTPNr(teachPoints(index).nr + 1, teachPoints(index).nr)
+                            tmpNewIndex = index
+                        End If
+                    Else
+                        teachPoints(index).nr -= 1
+                        changeTPNr(teachPoints(index).nr + 1, teachPoints(index).nr)
+                        tmpNewIndex = index
+                    End If
+                End If
+            End If
+                'Liste neu sortieren
+                teachPoints.Sort()
+            'TPs Updaten
+            OnProgChanged(New ProgChangedEventArgs(False, False, True, tmpNewIndex))
+        End If
+    End Sub
+    Private Sub swapTPNr(num1 As Int32, num2 As Int32)
+        For Each x As ProgramEntry In progList
+            If x.tpnr = num1 Then
+                x.tpnr = num2
+            ElseIf x.tpnr = num2 Then
+                x.tpnr = num1
+            End If
+        Next
+    End Sub
+    Private Sub changeTPNr(numOld As Int32, numNew As Int32)
+        For Each x As ProgramEntry In progList
+            If x.tpnr = numOld Then
+                x.tpnr = numNew
+            End If
+        Next
+    End Sub
     'PROGRAMM
     Public Sub addProgItem(item As ProgramEntry, index As Int32)
         progList.Insert(index + 1, item)

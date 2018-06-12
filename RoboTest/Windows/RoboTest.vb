@@ -189,6 +189,9 @@ Public Class RoboTest
             For Each x As TeachPoint In roboControl.teachPoints
                 lbTeachPoints.Items.Add($"{x.nr}: {x.name}")
             Next
+            If e.actTpIndex >= 0 Then
+                lbTeachPoints.SelectedIndex = e.actTpIndex
+            End If
         End If
         'Program
         If e.prog Then
@@ -471,6 +474,12 @@ Public Class RoboTest
             enableControls(False)
         End If
     End Sub
+    Private Sub btnTpUp_Click(sender As Object, e As EventArgs) Handles btnTpUp.Click
+        roboControl.moveTPUpDown(False, lbTeachPoints.SelectedIndex)
+    End Sub
+    Private Sub btnTpDown_Click(sender As Object, e As EventArgs) Handles btnTpDown.Click
+        roboControl.moveTPUpDown(True, lbTeachPoints.SelectedIndex)
+    End Sub
     'PROGRAMM
     Private Sub cbProgFunc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProgFunc.SelectedIndexChanged
         Select Case cbProgFunc.SelectedIndex
@@ -734,6 +743,8 @@ Public Class RoboTest
         btnProgExecuteLine.Enabled = enabled
         btnTpAdd.Enabled = enabled
         btnTpDel.Enabled = enabled
+        btnTpUp.Enabled = enabled
+        btnTpDown.Enabled = enabled
         btnTpMoveTo.Enabled = enabled
         btnGo.Enabled = enabled
         btnRef.Enabled = enabled
@@ -847,6 +858,7 @@ Public Class RoboTest
         End If
         num.Maximum = max
     End Sub
+
     Private Sub setTbMaxMin(ByRef tb As TrackBar, max As Int32, min As Int32)
         If tb.Value < min Then
             tb.Value = min

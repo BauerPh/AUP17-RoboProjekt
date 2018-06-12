@@ -237,6 +237,8 @@ Partial Class RoboTest
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Steuerung = New System.Windows.Forms.TabPage()
         Me.GroupBox30 = New System.Windows.Forms.GroupBox()
+        Me.btnTpDown = New System.Windows.Forms.Button()
+        Me.btnTpUp = New System.Windows.Forms.Button()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.numTeachPointNum = New System.Windows.Forms.NumericUpDown()
         Me.Label57 = New System.Windows.Forms.Label()
@@ -2612,6 +2614,8 @@ Partial Class RoboTest
         '
         'GroupBox30
         '
+        Me.GroupBox30.Controls.Add(Me.btnTpDown)
+        Me.GroupBox30.Controls.Add(Me.btnTpUp)
         Me.GroupBox30.Controls.Add(Me.Label58)
         Me.GroupBox30.Controls.Add(Me.numTeachPointNum)
         Me.GroupBox30.Controls.Add(Me.Label57)
@@ -2626,6 +2630,26 @@ Partial Class RoboTest
         Me.GroupBox30.TabIndex = 118
         Me.GroupBox30.TabStop = False
         Me.GroupBox30.Text = "Teachpunkte"
+        '
+        'btnTpDown
+        '
+        Me.btnTpDown.Enabled = False
+        Me.btnTpDown.Location = New System.Drawing.Point(342, 85)
+        Me.btnTpDown.Name = "btnTpDown"
+        Me.btnTpDown.Size = New System.Drawing.Size(48, 23)
+        Me.btnTpDown.TabIndex = 124
+        Me.btnTpDown.Text = "Runter"
+        Me.btnTpDown.UseVisualStyleBackColor = True
+        '
+        'btnTpUp
+        '
+        Me.btnTpUp.Enabled = False
+        Me.btnTpUp.Location = New System.Drawing.Point(288, 85)
+        Me.btnTpUp.Name = "btnTpUp"
+        Me.btnTpUp.Size = New System.Drawing.Size(48, 23)
+        Me.btnTpUp.TabIndex = 123
+        Me.btnTpUp.Text = "Hoch"
+        Me.btnTpUp.UseVisualStyleBackColor = True
         '
         'Label58
         '
@@ -2646,7 +2670,7 @@ Partial Class RoboTest
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(288, 82)
+        Me.Label57.Location = New System.Drawing.Point(288, 111)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(38, 13)
         Me.Label57.TabIndex = 119
@@ -2654,7 +2678,7 @@ Partial Class RoboTest
         '
         'tbTeachPointName
         '
-        Me.tbTeachPointName.Location = New System.Drawing.Point(288, 98)
+        Me.tbTeachPointName.Location = New System.Drawing.Point(288, 127)
         Me.tbTeachPointName.Name = "tbTeachPointName"
         Me.tbTeachPointName.Size = New System.Drawing.Size(106, 20)
         Me.tbTeachPointName.TabIndex = 118
@@ -2843,7 +2867,7 @@ Partial Class RoboTest
         Me.MaximizeBox = False
         Me.Name = "RoboTest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RoboTest v1.0.1.0"
+        Me.Text = "RoboTest v1.1.0.0"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox17.ResumeLayout(False)
@@ -3190,4 +3214,6 @@ Partial Class RoboTest
     Friend WithEvents ComLog As TabPage
     Friend WithEvents btnComLogClear As Button
     Friend WithEvents rtbComLog As RichTextBox
+    Friend WithEvents btnTpDown As Button
+    Friend WithEvents btnTpUp As Button
 End Class
