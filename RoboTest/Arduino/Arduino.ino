@@ -40,7 +40,7 @@ const uint8_t SERVO1_PIN = 11;
 const uint8_t SERVO2_PIN = 12;
 const uint8_t SERVO3_PIN = 13;
 
-const uint8_t EMERGENCY_STOP_PIN = 4;
+const uint8_t EMERGENCY_STOP_PIN = 7;
 
 const int32_t J1_POS_STEP_LIMIT = 2000000;
 const int32_t J1_NEG_STEP_LIMIT = -2000000;
